@@ -1,0 +1,269 @@
+@font-face {
+  font-family: 'Korinna';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./korinna-regular.otf');
+}
+
+@font-face {
+  font-family: 'Swiss 911';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./swiss911-xcm-bt.ttf');
+}
+
+@font-face {
+  font-family: 'Univers';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./univers-75-black.ttf');
+}
+
+@font-face {
+  font-family: 'Gyparody';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./gyparody.ttf');
+}
+
+.logo {
+  font-family: 'Gyparody';
+  font-size: 48px;
+  line-height: 48px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow:
+    1px 1px 4px #fff,
+    1px 1px 4px #ccc;
+}
+
+.logo.small {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.board {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 6px;
+  padding: 6px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.board.currentQ {
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  .board {
+    overflow-x: scroll;
+    justify-content: start;
+  }
+}
+
+.box {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: #0000b5;
+  padding: 4px;
+  height: 100%;
+  width: 100%;
+  min-width: 100px;
+  min-height: 60px;
+}
+
+.category {
+  font-family: 'Swiss 911';
+  font-size: 2.5vh;
+  line-height: 2.5vh;
+  letter-spacing: 1px;
+  color: #e1f3ff;
+  text-transform: uppercase;
+}
+
+.value {
+  font-family: 'Swiss 911';
+  font-size: 6vh;
+  color: #d7a04b;
+  text-shadow: black 4px 4px;
+}
+
+.value:hover {
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+.clueContainerContainer {
+  transform: scale(0.17);
+  transform-origin: 0 0;
+  transition: 0.7s ease-out;
+  width: 100%;
+  height: 100%;
+}
+
+.clueContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px;
+  background-color: #0000b5;
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.clueContainer.dailyDouble {
+  background-position-x: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('./jeopardy-daily-double.png');
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.clue {
+  font-family: 'Korinna';
+  text-transform: uppercase;
+  color: white;
+  font-size: 2em;
+  line-height: 1;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .clue {
+    overflow-y: scroll;
+    align-items: start;
+  }
+}
+
+.answer {
+  font-family: 'Korinna';
+  text-transform: uppercase;
+  color: white;
+  font-size: 22px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  width: 110px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.scoreboard .icons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+}
+
+.scoreboard .picture {
+  width: 100%;
+  margin-bottom: -4px;
+}
+
+.scoreboard .picture img {
+  width: 100%;
+}
+
+.scoreboard .points {
+  font-family: 'Univers';
+  color: white;
+  background-color: #0000b5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 22px;
+  padding: 4px 10px;
+  border: 4px solid black;
+}
+
+.scoreboard .points.negative {
+  color: red;
+}
+
+.scoreboard .answerBox.negative {
+  color: red;
+}
+
+.judgeButtons {
+  position: absolute;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.scoreboard .answerBox {
+  font-family: 'Korinna';
+  color: white;
+  background-color: #0000b5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 4px;
+  word-break: break-word;
+  border: 4px solid black;
+  position: relative;
+}
+
+.scoreboard .answerBox.buzz {
+  border: 4px solid white;
+}
+
+.scoreboard .answerBox .timeOffset {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 11px;
+  font-family: initial;
+  padding: 0px 3px;
+  border-radius: 3px;
+}
+
+.gameSelector input {
+  width: 100px;
+}
+
+#intro {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#intro video {
+  width: 100%;
+}
+
+#endgame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  padding: 20px;
+}
